@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
 /* Maya Hospital Reception Operations Design System
    Matches Lander's Imperial Royal Velvet Plum, Majestic Amethyst, and Lilac-Tinted Cream */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --primary-color: #240b3b;       /* Deep Imperial Royal Velvet Plum */
