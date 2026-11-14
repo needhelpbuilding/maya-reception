@@ -1,0 +1,120 @@
+/* Maya Hospital Reception Operations Design System
+   Matches Lander's Imperial Royal Velvet Plum, Majestic Amethyst, and Lilac-Tinted Cream */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #240b3b;       /* Deep Imperial Royal Velvet Plum */
+  --secondary-color: #7c3aed;     /* Majestic Imperial Purple Accent */
+  --accent-purple: #9333ea;
+  --accent-light: #c084fc;
+  --tertiary-color: #170526;      /* Darkest Amethyst / Midnight Plum */
+  --darkblue: #170526;
+  --black: #10031c;
+  --white: #ffffff;
+  --grey: #806b8c;
+  --fadeblue: #faf6fd;            /* Soft Lilac-Tinted Cream */
+  --red: #c94a29;                 /* Accent alert color */
+  --body-color: #3b284c;          /* Deep rich slate plum */
+  
+  --brand-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --heading-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--body-color);
+  background-color: #fdfbfe;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: var(--heading-font);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #1a082b;
+}
+
+/* Custom Scrollbar for Operations Dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f2fb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cde3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bfa7d2;
+}
+
+/* Healthcare Status Badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+.badge-confirmed {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-pending {
+  background-color: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-checkedin {
+  background-color: #f5f3ff;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+}
+
+.badge-inconsultation {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-completed {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.badge-cancelled {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.badge-noshow {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.badge-rescheduled {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
