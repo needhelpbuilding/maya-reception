@@ -154,7 +154,7 @@ export default function DoctorsPage() {
               key={doc.id}
               className={`bg-white rounded-xl border p-5 shadow-xs transition flex flex-col justify-between ${
                 doc.is_available_today
-                  ? 'border-slate-200 hover:border-purple-300'
+                  ? 'border-slate-200 hover:border-blue-300'
                   : 'border-rose-200 bg-rose-50/20'
               }`}
             >

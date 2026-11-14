@@ -319,21 +319,21 @@ export default function ReceptionOverviewPage() {
           </div>
 
           {/* Quick Hospital Contacts Card */}
-          <div className="bg-gradient-to-br from-[#240b3b] to-[#170526] text-white p-4 rounded-xl shadow-md">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-purple-300">
+          <div className="bg-[#245BFF] text-white p-4 rounded-xl shadow-md">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-orange-200">
               Reception Key Extensions
             </h3>
             <div className="mt-3 space-y-2 text-xs">
-              <div className="flex justify-between items-center pb-1.5 border-b border-purple-800/60">
-                <span className="text-purple-200">24x7 Ambulance Dispatch</span>
+              <div className="flex justify-between items-center pb-1.5 border-b border-blue-400/40">
+                <span className="text-white/90">24x7 Ambulance Dispatch</span>
                 <span className="font-bold text-white">+91 9839752108</span>
               </div>
-              <div className="flex justify-between items-center pb-1.5 border-b border-purple-800/60">
-                <span className="text-purple-200">ICU & Emergency Ward</span>
+              <div className="flex justify-between items-center pb-1.5 border-b border-blue-400/40">
+                <span className="text-white/90">ICU & Emergency Ward</span>
                 <span className="font-bold text-white">+91 9161103325</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-purple-200">Pathology & Radiology Lab</span>
+                <span className="text-white/90">Pathology & Radiology Lab</span>
                 <span className="font-bold text-white">+91 7897576583</span>
               </div>
             </div>

@@ -53,7 +53,7 @@ export default function SupportPage() {
               key={item.id}
               onClick={() => setActiveMessageId(item.id)}
               className={`w-full text-left p-3.5 hover:bg-orange-50/30 transition block ${
-                activeMessageId === item.id ? 'bg-orange-50/60 border-l-4 border-purple-700' : ''
+                activeMessageId === item.id ? 'bg-orange-50/60 border-l-4 border-[#245BFF]' : ''
               }`}
             >
               <div className="flex items-center justify-between text-xs">
