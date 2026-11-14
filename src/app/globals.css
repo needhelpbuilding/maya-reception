@@ -2,21 +2,21 @@
 @import "tailwindcss";
 
 /* Maya Hospital Reception Operations Design System
-   Matches Lander's Imperial Royal Velvet Plum, Majestic Amethyst, and Lilac-Tinted Cream */
+   Royal Blue #245BFF and Light Orange / White Flat Design System */
 
 :root {
-  --primary-color: #240b3b;       /* Deep Imperial Royal Velvet Plum */
-  --secondary-color: #7c3aed;     /* Majestic Imperial Purple Accent */
-  --accent-purple: #9333ea;
-  --accent-light: #c084fc;
-  --tertiary-color: #170526;      /* Darkest Amethyst / Midnight Plum */
-  --darkblue: #170526;
-  --black: #10031c;
+  --primary-color: #245BFF;       /* Royal Blue */
+  --secondary-color: #FF8A00;     /* Light Orange Accent */
+  --accent-purple: #FF8A00;
+  --accent-light: #FFEDD5;
+  --tertiary-color: #1A45C8;      /* Deep Royal Blue */
+  --darkblue: #0E36B4;
+  --black: #0F172A;
   --white: #ffffff;
-  --grey: #806b8c;
-  --fadeblue: #faf6fd;            /* Soft Lilac-Tinted Cream */
+  --grey: #64748B;
+  --fadeblue: #FFF7ED;            /* Warm Soft Cream */
   --red: #c94a29;                 /* Accent alert color */
-  --body-color: #3b284c;          /* Deep rich slate plum */
+  --body-color: #1E293B;          /* Deep rich slate */
   
   --brand-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --heading-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -34,7 +34,7 @@ body {
   font-size: 14.5px;
   line-height: 1.55;
   color: var(--body-color);
-  background-color: #fdfbfe;
+  background-color: #F8FAFC;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, .heading {
   font-family: var(--heading-font);
   letter-spacing: -0.02em;
   font-weight: 600;
-  color: #1a082b;
+  color: #245BFF;
 }
 
 /* Custom Scrollbar for Operations Dashboard */
@@ -51,14 +51,14 @@ h1, h2, h3, h4, h5, h6, .heading {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f7f2fb;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8cde3;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #bfa7d2;
+  background: #94a3b8;
 }
 
 /* Healthcare Status Badges */
@@ -86,9 +86,9 @@ h1, h2, h3, h4, h5, h6, .heading {
 }
 
 .badge-checkedin {
-  background-color: #f5f3ff;
-  color: #5b21b6;
-  border: 1px solid #ddd6fe;
+  background-color: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
 }
 
 .badge-inconsultation {

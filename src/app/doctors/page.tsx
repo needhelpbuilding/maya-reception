@@ -65,7 +65,7 @@ export default function DoctorsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">
             Doctor Availability & OPD Rostering
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
@@ -138,7 +138,7 @@ export default function DoctorsPage() {
           placeholder="Filter doctors by name or department..."
           value={searchDoc}
           onChange={(e) => setSearchDoc(e.target.value)}
-          className="w-full pl-9 pr-3 py-2 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 text-gray-800 transition"
+          className="w-full pl-9 pr-3 py-2 bg-white border border-orange-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] text-gray-800 transition"
         />
       </div>
 
@@ -154,7 +154,7 @@ export default function DoctorsPage() {
               key={doc.id}
               className={`bg-white rounded-xl border p-5 shadow-xs transition flex flex-col justify-between ${
                 doc.is_available_today
-                  ? 'border-purple-100 hover:border-purple-300'
+                  ? 'border-slate-200 hover:border-purple-300'
                   : 'border-rose-200 bg-rose-50/20'
               }`}
             >
@@ -162,7 +162,7 @@ export default function DoctorsPage() {
                 {/* Doctor Head Info */}
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-start space-x-3">
-                    <div className="w-12 h-12 rounded-lg bg-purple-100 overflow-hidden flex-shrink-0 border border-purple-200">
+                    <div className="w-12 h-12 rounded-lg bg-orange-100 overflow-hidden flex-shrink-0 border border-orange-200">
                       <Image
                         src={doc.image || '/hospital-assets/doctors/dr-sk-sharma.png'}
                         alt={doc.name}
@@ -173,7 +173,7 @@ export default function DoctorsPage() {
                     </div>
                     <div>
                       <h2 className="text-sm font-bold text-gray-900">{doc.name}</h2>
-                      <p className="text-[11px] text-purple-700 font-semibold">{doc.degrees}</p>
+                      <p className="text-[11px] text-[#245BFF] font-semibold">{doc.degrees}</p>
                       <p className="text-xs text-gray-500 line-clamp-1">{doc.department_name}</p>
                     </div>
                   </div>
@@ -193,7 +193,7 @@ export default function DoctorsPage() {
                 <div className="mt-4 space-y-2 border-t border-gray-100 pt-3 text-xs text-gray-600">
                   <div className="flex items-center justify-between">
                     <span className="flex items-center space-x-1.5 text-gray-500">
-                      <Clock className="w-3.5 h-3.5 text-purple-600" />
+                      <Clock className="w-3.5 h-3.5 text-[#EA580C]" />
                       <span>OPD Timings:</span>
                     </span>
                     <span className="font-semibold text-gray-900">{doc.opd_timings}</span>
@@ -201,7 +201,7 @@ export default function DoctorsPage() {
 
                   <div className="flex items-center justify-between">
                     <span className="text-gray-500">Consultation Fee:</span>
-                    <span className="font-bold text-purple-900">₹{doc.consultation_fee}</span>
+                    <span className="font-bold text-[#245BFF]">₹{doc.consultation_fee}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -216,7 +216,7 @@ export default function DoctorsPage() {
                 {doc.phone && (
                   <a
                     href={`tel:${doc.phone}`}
-                    className="text-purple-700 hover:underline flex items-center space-x-1 font-medium"
+                    className="text-[#245BFF] hover:underline flex items-center space-x-1 font-medium"
                   >
                     <Phone className="w-3 h-3" />
                     <span>{doc.phone}</span>
@@ -309,10 +309,10 @@ export default function DoctorsPage() {
       {/* Impacted Patients Resolution Drawer/Modal */}
       {selectedImpactedLeave && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 border border-purple-100 space-y-4 max-h-[85vh] overflow-y-auto">
+          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 border border-slate-200 space-y-4 max-h-[85vh] overflow-y-auto">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-base font-bold text-[#1e0833]">
+                <h3 className="text-base font-bold text-[#245BFF]">
                   Reschedule Impacted Patients ({selectedImpactedLeave.doctor_name})
                 </h3>
                 <p className="text-xs text-gray-500">
@@ -341,7 +341,7 @@ export default function DoctorsPage() {
                     <div>
                       <div className="font-bold text-gray-900">{apt.patient_name}</div>
                       <div className="text-gray-600 flex items-center space-x-2 mt-0.5">
-                        <Phone className="w-3 h-3 text-purple-700" />
+                        <Phone className="w-3 h-3 text-[#245BFF]" />
                         <a href={`tel:${apt.patient_phone}`} className="hover:underline">
                           {apt.patient_phone}
                         </a>
@@ -365,7 +365,7 @@ export default function DoctorsPage() {
                             );
                           }
                         }}
-                        className="px-3 py-1.5 bg-purple-700 hover:bg-purple-800 text-white rounded-md font-semibold transition"
+                        className="px-3 py-1.5 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-md font-semibold transition"
                       >
                         Reassign to Available Doctor
                       </button>

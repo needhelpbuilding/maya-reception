@@ -75,14 +75,14 @@ export default function PatientsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">Patient Directory</h1>
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">Patient Directory</h1>
           <p className="text-sm text-gray-500 mt-0.5">
             Operational demographic registry, visit records, and emergency contacts.
           </p>
         </div>
         <button
           onClick={() => setShowRegisterModal(true)}
-          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm transition"
+          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm transition"
         >
           <UserPlus className="w-3.5 h-3.5" />
           <span>Register New Patient</span>
@@ -97,16 +97,16 @@ export default function PatientsPage() {
           placeholder="Search by patient name, phone, or ID (e.g. MH-2026)..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-9 pr-3 py-2 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 text-gray-800 transition"
+          className="w-full pl-9 pr-3 py-2 bg-white border border-orange-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] text-gray-800 transition"
         />
       </div>
 
       {/* Patient Directory Table */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-50 to-white text-[#240b3b] font-bold border-b border-purple-100">
+              <tr className="bg-slate-50 text-[#245BFF] font-bold border-b border-slate-200">
                 <th className="p-3.5 pl-4">Patient ID</th>
                 <th className="p-3.5">Full Name</th>
                 <th className="p-3.5">Contact Number</th>
@@ -125,8 +125,8 @@ export default function PatientsPage() {
                 </tr>
               ) : (
                 filteredPatients.map((patient) => (
-                  <tr key={patient.id} className="hover:bg-purple-50/20 transition">
-                    <td className="p-3.5 pl-4 font-mono font-bold text-purple-900">
+                  <tr key={patient.id} className="hover:bg-orange-50/30 transition">
+                    <td className="p-3.5 pl-4 font-mono font-bold text-[#245BFF]">
                       {patient.patient_id_display}
                     </td>
                     <td className="p-3.5 font-semibold text-gray-900">
@@ -135,7 +135,7 @@ export default function PatientsPage() {
                     <td className="p-3.5">
                       <a
                         href={`tel:${patient.phone}`}
-                        className="text-purple-700 hover:underline flex items-center space-x-1 font-medium"
+                        className="text-[#245BFF] hover:underline flex items-center space-x-1 font-medium"
                       >
                         <Phone className="w-3 h-3" />
                         <span>{patient.phone}</span>
@@ -144,7 +144,7 @@ export default function PatientsPage() {
                     <td className="p-3.5">
                       {patient.age} Yrs / {patient.gender}
                     </td>
-                    <td className="p-3.5 font-semibold text-purple-950">
+                    <td className="p-3.5 font-semibold text-[#245BFF]">
                       {patient.blood_group || '—'}
                     </td>
                     <td className="p-3.5 font-medium text-gray-700">
@@ -153,7 +153,7 @@ export default function PatientsPage() {
                     <td className="p-3.5 pr-4 text-right">
                       <button
                         onClick={() => setSelectedPatient(patient)}
-                        className="px-2.5 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 rounded font-semibold transition inline-flex items-center space-x-1"
+                        className="px-2.5 py-1.5 bg-orange-50 hover:bg-orange-100 text-[#245BFF] border border-orange-200 rounded font-semibold transition inline-flex items-center space-x-1"
                       >
                         <span>View Profile</span>
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -170,13 +170,13 @@ export default function PatientsPage() {
       {/* Patient Operational Profile Modal */}
       {selectedPatient && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 border border-purple-100 space-y-5 max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-6 border border-slate-200 space-y-5 max-h-[90vh] overflow-y-auto">
             <div className="flex items-start justify-between border-b pb-4">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-bold text-[#245BFF] bg-orange-50 px-2 py-0.5 rounded">
                   {selectedPatient.patient_id_display}
                 </span>
-                <h3 className="text-lg font-bold text-[#1e0833] mt-1">
+                <h3 className="text-lg font-bold text-[#245BFF] mt-1">
                   {selectedPatient.full_name}
                 </h3>
                 <p className="text-xs text-gray-500">
@@ -192,7 +192,7 @@ export default function PatientsPage() {
             </div>
 
             {/* Demographics & Emergency Contacts */}
-            <div className="grid grid-cols-2 gap-4 text-xs bg-purple-50/40 p-4 rounded-lg">
+            <div className="grid grid-cols-2 gap-4 text-xs bg-orange-50/40 p-4 rounded-lg">
               <div>
                 <span className="text-gray-500 block">Primary Contact:</span>
                 <span className="font-semibold text-gray-900">{selectedPatient.phone}</span>
@@ -237,7 +237,7 @@ export default function PatientsPage() {
                           {apt.appointment_date} at {apt.time_slot}
                         </div>
                       </div>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-purple-50 text-purple-800 rounded-full border border-purple-200">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-orange-50 text-[#EA580C] rounded-full border border-orange-200">
                         {apt.appointment_status}
                       </span>
                     </div>
@@ -250,7 +250,7 @@ export default function PatientsPage() {
             <div className="flex justify-end pt-2">
               <button
                 onClick={() => setSelectedPatient(null)}
-                className="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm"
+                className="px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm"
               >
                 Close Profile
               </button>
@@ -264,10 +264,10 @@ export default function PatientsPage() {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
           <form
             onSubmit={handleRegisterSubmit}
-            className="bg-white rounded-xl shadow-2xl max-w-lg w-full p-6 border border-purple-100 space-y-4 max-h-[90vh] overflow-y-auto text-xs"
+            className="bg-white rounded-xl shadow-2xl max-w-lg w-full p-6 border border-slate-200 space-y-4 max-h-[90vh] overflow-y-auto text-xs"
           >
-            <div className="flex items-center space-x-2 text-[#240b3b]">
-              <UserPlus className="w-5 h-5 text-purple-700" />
+            <div className="flex items-center space-x-2 text-[#245BFF]">
+              <UserPlus className="w-5 h-5 text-[#245BFF]" />
               <h3 className="text-base font-bold">Register New Patient</h3>
             </div>
             <p className="text-gray-500">
@@ -283,7 +283,7 @@ export default function PatientsPage() {
                   placeholder="e.g. Ramesh Chandra Verma"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -295,7 +295,7 @@ export default function PatientsPage() {
                   placeholder="+91 9839..."
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -306,7 +306,7 @@ export default function PatientsPage() {
                   placeholder="patient@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -315,7 +315,7 @@ export default function PatientsPage() {
                 <select
                   value={gender}
                   onChange={(e) => setGender(e.target.value as any)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -332,7 +332,7 @@ export default function PatientsPage() {
                   max={120}
                   value={age}
                   onChange={(e) => setAge(Number(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -341,7 +341,7 @@ export default function PatientsPage() {
                 <select
                   value={bloodGroup}
                   onChange={(e) => setBloodGroup(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
@@ -360,7 +360,7 @@ export default function PatientsPage() {
                   type="text"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -371,7 +371,7 @@ export default function PatientsPage() {
                   placeholder="Relative Name"
                   value={emergencyContact}
                   onChange={(e) => setEmergencyContact(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -382,7 +382,7 @@ export default function PatientsPage() {
                   placeholder="+91..."
                   value={emergencyPhone}
                   onChange={(e) => setEmergencyPhone(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function PatientsPage() {
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm"
+                className="px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm"
               >
                 Complete Registration
               </button>

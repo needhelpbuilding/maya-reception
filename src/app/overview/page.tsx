@@ -59,7 +59,7 @@ export default function ReceptionOverviewPage() {
       {/* Title & Fast Operational Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">
             Hospital Operations Overview
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
@@ -69,14 +69,14 @@ export default function ReceptionOverviewPage() {
         <div className="flex items-center space-x-2.5">
           <Link
             href="/appointments"
-            className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm transition"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm transition"
           >
             <PlusCircle className="w-3.5 h-3.5" />
             <span>Book New Appointment</span>
           </Link>
           <Link
             href="/patients"
-            className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-white border border-purple-200 text-purple-900 hover:bg-purple-50 rounded-lg text-xs font-semibold shadow-xs transition"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-white border border-orange-200 text-[#245BFF] hover:bg-orange-50 rounded-lg text-xs font-semibold shadow-xs transition"
           >
             <User className="w-3.5 h-3.5" />
             <span>Register Patient</span>
@@ -112,10 +112,10 @@ export default function ReceptionOverviewPage() {
 
       {/* Summary Metrics Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between text-gray-500 text-xs font-medium">
             <span>Today&apos;s Appointments</span>
-            <CalendarCheck className="w-4 h-4 text-purple-700" />
+            <CalendarCheck className="w-4 h-4 text-[#245BFF]" />
           </div>
           <div className="mt-2 flex items-baseline space-x-2">
             <span className="text-2xl font-bold text-gray-900">{todayApts.length}</span>
@@ -126,7 +126,7 @@ export default function ReceptionOverviewPage() {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between text-gray-500 text-xs font-medium">
             <span>Patient Check-in / Queue</span>
             <Activity className="w-4 h-4 text-emerald-600" />
@@ -140,13 +140,13 @@ export default function ReceptionOverviewPage() {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between text-gray-500 text-xs font-medium">
             <span>Doctor Availability</span>
-            <UserCheck className="w-4 h-4 text-purple-700" />
+            <UserCheck className="w-4 h-4 text-[#245BFF]" />
           </div>
           <div className="mt-2 flex items-baseline space-x-2">
-            <span className="text-2xl font-bold text-purple-950">{availableDocs} / {doctors.length}</span>
+            <span className="text-2xl font-bold text-[#245BFF]">{availableDocs} / {doctors.length}</span>
             <span className="text-xs text-gray-500">on duty</span>
           </div>
           <div className="mt-2 text-[11px] text-rose-600 font-medium">
@@ -154,13 +154,13 @@ export default function ReceptionOverviewPage() {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between text-gray-500 text-xs font-medium">
             <span>OPD Collection (Today)</span>
-            <CreditCard className="w-4 h-4 text-purple-700" />
+            <CreditCard className="w-4 h-4 text-[#245BFF]" />
           </div>
           <div className="mt-2 flex items-baseline space-x-2">
-            <span className="text-2xl font-bold text-purple-900">₹{todayRevenue}</span>
+            <span className="text-2xl font-bold text-[#245BFF]">₹{todayRevenue}</span>
             <span className="text-xs text-gray-500">collected</span>
           </div>
           <div className="mt-2 text-[11px] text-amber-600 font-medium">
@@ -172,15 +172,15 @@ export default function ReceptionOverviewPage() {
       {/* Main Operations Split: Live Appointment Timeline & Quick Doctors Status */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left 2 Cols: Live Chronological Timeline */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
-          <div className="p-5 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gradient-to-r from-purple-50/50 to-white">
+        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+          <div className="p-5 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50">
             <div>
-              <h2 className="text-base font-bold text-[#1e0833]">Today&apos;s Appointment Schedule</h2>
+              <h2 className="text-base font-bold text-[#245BFF]">Today&apos;s Appointment Schedule</h2>
               <p className="text-xs text-gray-500">Chronological patient queue & reception controls</p>
             </div>
             <Link
               href="/appointments"
-              className="text-xs font-semibold text-purple-700 hover:text-purple-900 flex items-center space-x-1"
+              className="text-xs font-semibold text-[#245BFF] hover:text-[#245BFF] flex items-center space-x-1"
             >
               <span>View Full Schedule</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -196,12 +196,12 @@ export default function ReceptionOverviewPage() {
               todayApts.map((apt) => (
                 <div
                   key={apt.id}
-                  className="p-4 hover:bg-purple-50/30 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  className="p-4 hover:bg-orange-50/30 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="flex items-start space-x-3.5">
-                    <div className="w-16 flex-shrink-0 text-center bg-purple-50 border border-purple-200/60 rounded-lg p-1.5">
-                      <span className="block text-xs font-bold text-purple-900">{apt.time_slot}</span>
-                      <span className="text-[10px] text-purple-600 uppercase font-medium">{apt.booking_ref}</span>
+                    <div className="w-16 flex-shrink-0 text-center bg-orange-50 border border-orange-200/60 rounded-lg p-1.5">
+                      <span className="block text-xs font-bold text-[#245BFF]">{apt.time_slot}</span>
+                      <span className="text-[10px] text-[#EA580C] uppercase font-medium">{apt.booking_ref}</span>
                     </div>
 
                     <div>
@@ -210,7 +210,7 @@ export default function ReceptionOverviewPage() {
                         <span
                           className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
                             apt.appointment_status === 'Checked In'
-                              ? 'bg-purple-100 text-purple-800 border border-purple-200'
+                              ? 'bg-orange-100 text-[#EA580C] border border-orange-200'
                               : apt.appointment_status === 'Confirmed'
                               ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                               : apt.appointment_status === 'Rescheduled'
@@ -223,13 +223,13 @@ export default function ReceptionOverviewPage() {
                       </div>
 
                       <div className="text-xs text-gray-600 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="font-medium text-purple-950">{apt.doctor_name}</span>
+                        <span className="font-medium text-[#245BFF]">{apt.doctor_name}</span>
                         <span className="text-gray-300">•</span>
                         <span>{apt.department_name}</span>
                         <span className="text-gray-300">•</span>
                         <a
                           href={`tel:${apt.patient_phone}`}
-                          className="text-purple-700 hover:underline flex items-center space-x-1"
+                          className="text-[#245BFF] hover:underline flex items-center space-x-1"
                         >
                           <Phone className="w-3 h-3" />
                           <span>{apt.patient_phone}</span>
@@ -259,9 +259,9 @@ export default function ReceptionOverviewPage() {
                     {apt.payment_status === 'Pending' ? (
                       <button
                         onClick={() => updatePaymentStatus(apt.id, 'Paid', 'Cash')}
-                        className="px-2.5 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 rounded-md text-xs font-semibold flex items-center space-x-1 transition"
+                        className="px-2.5 py-1.5 bg-orange-50 hover:bg-orange-100 text-[#245BFF] border border-orange-200 rounded-md text-xs font-semibold flex items-center space-x-1 transition"
                       >
-                        <CreditCard className="w-3.5 h-3.5 text-purple-700" />
+                        <CreditCard className="w-3.5 h-3.5 text-[#245BFF]" />
                         <span>Collect ₹{apt.consultation_fee}</span>
                       </button>
                     ) : (
@@ -272,7 +272,7 @@ export default function ReceptionOverviewPage() {
 
                     <Link
                       href="/appointments"
-                      className="p-1.5 text-gray-400 hover:text-purple-700 hover:bg-purple-50 rounded"
+                      className="p-1.5 text-gray-400 hover:text-[#245BFF] hover:bg-orange-50 rounded"
                       title="Manage details"
                     >
                       <ArrowRight className="w-4 h-4" />
@@ -286,10 +286,10 @@ export default function ReceptionOverviewPage() {
 
         {/* Right Col: Doctors Duty Board & Quick Notes */}
         <div className="space-y-6">
-          <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
-            <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-purple-50/40">
-              <h2 className="text-sm font-bold text-[#1e0833]">Doctor OPD Duty Board</h2>
-              <Link href="/doctors" className="text-xs text-purple-700 font-semibold hover:underline">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+            <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-orange-50/40">
+              <h2 className="text-sm font-bold text-[#245BFF]">Doctor OPD Duty Board</h2>
+              <Link href="/doctors" className="text-xs text-[#245BFF] font-semibold hover:underline">
                 Manage
               </Link>
             </div>
@@ -300,7 +300,7 @@ export default function ReceptionOverviewPage() {
                   <div>
                     <h3 className="text-xs font-bold text-gray-900">{doc.name}</h3>
                     <p className="text-[11px] text-gray-500">{doc.department_name}</p>
-                    <p className="text-[10px] text-purple-700 font-medium">{doc.opd_timings}</p>
+                    <p className="text-[10px] text-[#245BFF] font-medium">{doc.opd_timings}</p>
                   </div>
                   <div>
                     {doc.is_available_today ? (

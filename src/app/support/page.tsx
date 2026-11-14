@@ -35,25 +35,25 @@ export default function SupportPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">Patient Support Desk</h1>
+        <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">Patient Support Desk</h1>
         <p className="text-sm text-gray-500 mt-0.5">
           Handle incoming patient portal requests, discharge document inquiries, and operational queries.
         </p>
       </div>
 
       {/* Split Support Conversation Workspace */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs grid grid-cols-1 md:grid-cols-3 min-h-[500px] overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs grid grid-cols-1 md:grid-cols-3 min-h-[500px] overflow-hidden">
         {/* Left List */}
         <div className="border-r border-gray-100 divide-y divide-gray-100 overflow-y-auto">
-          <div className="p-3 bg-purple-50/50 text-xs font-bold text-purple-950 uppercase tracking-wider">
+          <div className="p-3 bg-orange-50/50 text-xs font-bold text-[#245BFF] uppercase tracking-wider">
             Patient Support Tickets ({messages.length})
           </div>
           {messages.map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveMessageId(item.id)}
-              className={`w-full text-left p-3.5 hover:bg-purple-50/30 transition block ${
-                activeMessageId === item.id ? 'bg-purple-50/60 border-l-4 border-purple-700' : ''
+              className={`w-full text-left p-3.5 hover:bg-orange-50/30 transition block ${
+                activeMessageId === item.id ? 'bg-orange-50/60 border-l-4 border-purple-700' : ''
               }`}
             >
               <div className="flex items-center justify-between text-xs">
@@ -85,22 +85,22 @@ export default function SupportPage() {
                   <div>
                     <h3 className="text-base font-bold text-gray-900">{activeMessage.patient_name}</h3>
                     <div className="flex items-center space-x-2 text-xs text-gray-500 mt-0.5">
-                      <Phone className="w-3 h-3 text-purple-700" />
-                      <a href={`tel:${activeMessage.phone}`} className="hover:underline text-purple-700">
+                      <Phone className="w-3 h-3 text-[#245BFF]" />
+                      <a href={`tel:${activeMessage.phone}`} className="hover:underline text-[#245BFF]">
                         {activeMessage.phone}
                       </a>
                       <span>•</span>
                       <span>Channel: {activeMessage.channel}</span>
                     </div>
                   </div>
-                  <span className="text-xs bg-purple-50 text-purple-800 font-semibold px-2.5 py-1 rounded-full border border-purple-200">
+                  <span className="text-xs bg-orange-50 text-[#EA580C] font-semibold px-2.5 py-1 rounded-full border border-orange-200">
                     Status: {activeMessage.status}
                   </span>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="bg-purple-50/60 p-4 rounded-xl border border-purple-100 max-w-lg">
-                    <p className="text-xs font-semibold text-purple-950 mb-1">
+                  <div className="bg-orange-50/60 p-4 rounded-xl border border-slate-200 max-w-lg">
+                    <p className="text-xs font-semibold text-[#245BFF] mb-1">
                       {activeMessage.patient_name}:
                     </p>
                     <p className="text-xs text-gray-800 leading-relaxed">{activeMessage.message}</p>
@@ -130,11 +130,11 @@ export default function SupportPage() {
                     placeholder="Type official reception reply or internal resolution note..."
                     value={replyText}
                     onChange={(e) => setReplyText(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800"
                   />
                   <button
                     type="submit"
-                    className="mt-2 px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm flex items-center space-x-1.5 ml-auto"
+                    className="mt-2 px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm flex items-center space-x-1.5 ml-auto"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Send Response</span>

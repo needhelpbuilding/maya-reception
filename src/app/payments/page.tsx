@@ -61,7 +61,7 @@ export default function PaymentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">
             Billing & Reception Cash Desk
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
@@ -70,7 +70,7 @@ export default function PaymentsPage() {
         </div>
         <button
           onClick={() => setShowCollectModal(true)}
-          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm transition"
+          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm transition"
         >
           <PlusCircle className="w-3.5 h-3.5" />
           <span>Record Counter Collection</span>
@@ -79,24 +79,24 @@ export default function PaymentsPage() {
 
       {/* Financial Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Today&apos;s Collection</span>
-          <div className="text-2xl font-bold text-purple-900 mt-1">₹{totalCollectedToday}</div>
+          <div className="text-2xl font-bold text-[#245BFF] mt-1">₹{totalCollectedToday}</div>
           <span className="text-[11px] text-emerald-600 font-semibold">100% verified counter</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Receipts Issued</span>
           <div className="text-2xl font-bold text-gray-900 mt-1">{payments.length}</div>
           <span className="text-[11px] text-gray-500">Audited receipts</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">UPI / Digital Desk</span>
-          <div className="text-2xl font-bold text-purple-950 mt-1">
+          <div className="text-2xl font-bold text-[#245BFF] mt-1">
             ₹{payments.filter((p) => p.payment_method === 'UPI').reduce((s, p) => s + p.amount, 0)}
           </div>
-          <span className="text-[11px] text-purple-600 font-semibold">Direct QR Code / UPI</span>
+          <span className="text-[11px] text-[#EA580C] font-semibold">Direct QR Code / UPI</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Cash in Drawer</span>
           <div className="text-2xl font-bold text-emerald-800 mt-1">
             ₹{payments.filter((p) => p.payment_method === 'Cash').reduce((s, p) => s + p.amount, 0)}
@@ -113,16 +113,16 @@ export default function PaymentsPage() {
           placeholder="Search by receipt number, patient name, phone..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-9 pr-3 py-2 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 text-gray-800 transition"
+          className="w-full pl-9 pr-3 py-2 bg-white border border-orange-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] text-gray-800 transition"
         />
       </div>
 
       {/* Receipts Table */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-50 to-white text-[#240b3b] font-bold border-b border-purple-100">
+              <tr className="bg-slate-50 text-[#245BFF] font-bold border-b border-slate-200">
                 <th className="p-3.5 pl-4">Receipt #</th>
                 <th className="p-3.5">Patient Details</th>
                 <th className="p-3.5">Amount</th>
@@ -142,8 +142,8 @@ export default function PaymentsPage() {
                 </tr>
               ) : (
                 filteredPayments.map((pay) => (
-                  <tr key={pay.id} className="hover:bg-purple-50/20 transition">
-                    <td className="p-3.5 pl-4 font-mono font-bold text-purple-900">
+                  <tr key={pay.id} className="hover:bg-orange-50/30 transition">
+                    <td className="p-3.5 pl-4 font-mono font-bold text-[#245BFF]">
                       {pay.receipt_number}
                     </td>
                     <td className="p-3.5 font-semibold text-gray-900">
@@ -154,7 +154,7 @@ export default function PaymentsPage() {
                       ₹{pay.amount}
                     </td>
                     <td className="p-3.5">
-                      <span className="font-semibold text-purple-950 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+                      <span className="font-semibold text-[#245BFF] bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
                         {pay.payment_method}
                       </span>
                     </td>
@@ -172,7 +172,7 @@ export default function PaymentsPage() {
                     <td className="p-3.5 pr-4 text-right">
                       <button
                         onClick={() => setSelectedReceiptForPrint(pay)}
-                        className="px-2.5 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 rounded font-semibold transition inline-flex items-center space-x-1"
+                        className="px-2.5 py-1.5 bg-orange-50 hover:bg-orange-100 text-[#245BFF] border border-orange-200 rounded font-semibold transition inline-flex items-center space-x-1"
                       >
                         <Printer className="w-3.5 h-3.5" />
                         <span>Print Receipt</span>
@@ -191,10 +191,10 @@ export default function PaymentsPage() {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
           <form
             onSubmit={handleRecordPaymentSubmit}
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-purple-100 space-y-4 text-xs"
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-slate-200 space-y-4 text-xs"
           >
-            <div className="flex items-center space-x-2 text-[#240b3b]">
-              <Receipt className="w-5 h-5 text-purple-700" />
+            <div className="flex items-center space-x-2 text-[#245BFF]">
+              <Receipt className="w-5 h-5 text-[#245BFF]" />
               <h3 className="text-base font-bold">Record Counter Collection</h3>
             </div>
 
@@ -207,7 +207,7 @@ export default function PaymentsPage() {
                   placeholder="e.g. Ramesh Kumar"
                   value={patientName}
                   onChange={(e) => setPatientName(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -219,7 +219,7 @@ export default function PaymentsPage() {
                   placeholder="+91..."
                   value={patientPhone}
                   onChange={(e) => setPatientPhone(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export default function PaymentsPage() {
                   min={1}
                   value={amount}
                   onChange={(e) => setAmount(Number(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -240,7 +240,7 @@ export default function PaymentsPage() {
                 <select
                   value={method}
                   onChange={(e) => setMethod(e.target.value as any)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   <option value="Cash">Cash</option>
                   <option value="UPI">UPI (Google Pay, PhonePe, Paytm)</option>
@@ -255,7 +255,7 @@ export default function PaymentsPage() {
                   placeholder="e.g. UPI Ref / Cash Bill No"
                   value={transactionRef}
                   onChange={(e) => setTransactionRef(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
             </div>
@@ -270,7 +270,7 @@ export default function PaymentsPage() {
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm"
+                className="px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm"
               >
                 Issue Receipt
               </button>
@@ -282,9 +282,9 @@ export default function PaymentsPage() {
       {/* Printable Receipt Modal */}
       {selectedReceiptForPrint && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 border border-purple-200 text-xs space-y-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 border border-orange-200 text-xs space-y-4">
             <div className="text-center border-b pb-3">
-              <h3 className="font-bold text-sm text-[#240b3b]">Maya Hospital & Multi Speciality Centre</h3>
+              <h3 className="font-bold text-sm text-[#245BFF]">Maya Hospital & Multi Speciality Centre</h3>
               <p className="text-[10px] text-gray-500">Meerpur, Lakhimpur Kheri, UP - 262701</p>
               <p className="text-[10px] text-gray-500">24x7 Helpline: +91 9839752108</p>
             </div>
@@ -312,7 +312,7 @@ export default function PaymentsPage() {
               </div>
               <div className="flex justify-between border-t pt-2 mt-2 text-sm">
                 <span className="font-bold text-gray-900">Total Paid:</span>
-                <span className="font-bold text-purple-950">₹{selectedReceiptForPrint.amount}</span>
+                <span className="font-bold text-[#245BFF]">₹{selectedReceiptForPrint.amount}</span>
               </div>
             </div>
 
@@ -331,7 +331,7 @@ export default function PaymentsPage() {
                 onClick={() => {
                   window.print();
                 }}
-                className="px-3 py-1.5 bg-purple-700 hover:bg-purple-800 text-white rounded text-xs font-semibold flex items-center space-x-1"
+                className="px-3 py-1.5 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded text-xs font-semibold flex items-center space-x-1"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>Print</span>

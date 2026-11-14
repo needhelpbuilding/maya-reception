@@ -12,11 +12,11 @@ export default function ReceptionHeader() {
   const urgentAlerts = doctorLeaves.filter((l) => l.affected_appointments_count > l.rescheduled_count);
 
   return (
-    <header className="bg-white border-b border-purple-100 shadow-xs px-6 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sticky top-0 z-30">
+    <header className="bg-white border-b border-orange-100 shadow-xs px-6 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sticky top-0 z-30">
       {/* Date & Shift Context */}
       <div className="flex items-center space-x-3 text-sm">
-        <div className="flex items-center space-x-1.5 text-purple-950 font-semibold">
-          <Calendar className="w-4 h-4 text-purple-700" />
+        <div className="flex items-center space-x-1.5 text-[#245BFF] font-semibold">
+          <Calendar className="w-4 h-4 text-[#245BFF]" />
           <span>{todayStr}</span>
         </div>
         <span className="text-gray-300">|</span>
@@ -42,7 +42,7 @@ export default function ReceptionHeader() {
             placeholder="Search patient, phone or booking..."
             value={globalSearch}
             onChange={(e) => setGlobalSearch(e.target.value)}
-            className="pl-9 pr-4 py-1.5 bg-purple-50/50 border border-purple-200/80 rounded-lg text-xs w-64 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800 transition"
+            className="pl-9 pr-4 py-1.5 bg-orange-50/50 border border-orange-200/80 rounded-lg text-xs w-64 focus:outline-none focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800 transition"
           />
         </div>
 

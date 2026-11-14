@@ -63,7 +63,7 @@ export default function AdmissionsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">
             Inpatient Admissions & Discharges (IPD)
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
@@ -72,7 +72,7 @@ export default function AdmissionsPage() {
         </div>
         <button
           onClick={() => setShowAdmissionModal(true)}
-          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm transition"
+          className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm transition"
         >
           <UserPlus className="w-3.5 h-3.5" />
           <span>New Inpatient Admission</span>
@@ -81,26 +81,26 @@ export default function AdmissionsPage() {
 
       {/* Ward Occupancy Overview Quick Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Currently Admitted</span>
-          <div className="text-2xl font-bold text-purple-950 mt-1">
+          <div className="text-2xl font-bold text-[#245BFF] mt-1">
             {admissions.filter((a) => a.admission_status === 'Admitted').length}
           </div>
-          <span className="text-[11px] text-purple-600 font-semibold">Active in wards</span>
+          <span className="text-[11px] text-[#EA580C] font-semibold">Active in wards</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Discharged (This Week)</span>
           <div className="text-2xl font-bold text-emerald-700 mt-1">
             {admissions.filter((a) => a.admission_status === 'Discharged').length}
           </div>
           <span className="text-[11px] text-emerald-600 font-semibold">Clearances completed</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">ICU Beds Occupied</span>
           <div className="text-2xl font-bold text-rose-700 mt-1">1 / 6</div>
           <span className="text-[11px] text-rose-600 font-semibold">5 ICU beds free</span>
         </div>
-        <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs">
+        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <span className="text-xs text-gray-500 font-medium">Total Ward Capacity</span>
           <div className="text-2xl font-bold text-gray-900 mt-1">30 Beds</div>
           <span className="text-[11px] text-gray-400">Multi-Speciality Wings</span>
@@ -115,16 +115,16 @@ export default function AdmissionsPage() {
           placeholder="Filter by patient, room or admission ref..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-9 pr-3 py-2 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 text-gray-800 transition"
+          className="w-full pl-9 pr-3 py-2 bg-white border border-orange-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] text-gray-800 transition"
         />
       </div>
 
       {/* Admissions Table */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-50 to-white text-[#240b3b] font-bold border-b border-purple-100">
+              <tr className="bg-slate-50 text-[#245BFF] font-bold border-b border-slate-200">
                 <th className="p-3.5 pl-4">Admission #</th>
                 <th className="p-3.5">Patient Details</th>
                 <th className="p-3.5">Ward / Room</th>
@@ -143,18 +143,18 @@ export default function AdmissionsPage() {
                 </tr>
               ) : (
                 filteredAdmissions.map((adm) => (
-                  <tr key={adm.id} className="hover:bg-purple-50/20 transition">
-                    <td className="p-3.5 pl-4 font-mono font-bold text-purple-900">
+                  <tr key={adm.id} className="hover:bg-orange-50/30 transition">
+                    <td className="p-3.5 pl-4 font-mono font-bold text-[#245BFF]">
                       {adm.admission_number}
                     </td>
                     <td className="p-3.5 font-semibold text-gray-900">
                       <div>{adm.patient_name}</div>
-                      <a href={`tel:${adm.patient_phone}`} className="text-purple-700 hover:underline flex items-center space-x-1 text-[11px] font-normal mt-0.5">
+                      <a href={`tel:${adm.patient_phone}`} className="text-[#245BFF] hover:underline flex items-center space-x-1 text-[11px] font-normal mt-0.5">
                         <Phone className="w-3 h-3" />
                         <span>{adm.patient_phone}</span>
                       </a>
                     </td>
-                    <td className="p-3.5 font-bold text-purple-950">
+                    <td className="p-3.5 font-bold text-[#245BFF]">
                       {adm.ward_or_room}
                     </td>
                     <td className="p-3.5">
@@ -168,7 +168,7 @@ export default function AdmissionsPage() {
                       <span
                         className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
                           adm.admission_status === 'Admitted'
-                            ? 'bg-purple-100 text-purple-800 border border-purple-200'
+                            ? 'bg-orange-100 text-[#EA580C] border border-orange-200'
                             : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                         }`}
                       >
@@ -200,10 +200,10 @@ export default function AdmissionsPage() {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
           <form
             onSubmit={handleRegisterAdmission}
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-purple-100 space-y-4 text-xs"
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-slate-200 space-y-4 text-xs"
           >
-            <div className="flex items-center space-x-2 text-[#240b3b]">
-              <BedDouble className="w-5 h-5 text-purple-700" />
+            <div className="flex items-center space-x-2 text-[#245BFF]">
+              <BedDouble className="w-5 h-5 text-[#245BFF]" />
               <h3 className="text-base font-bold">Admit Patient to IPD</h3>
             </div>
 
@@ -214,7 +214,7 @@ export default function AdmissionsPage() {
                   required
                   value={selectedPatientId}
                   onChange={(e) => setSelectedPatientId(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   <option value="">-- Choose Registered Patient --</option>
                   {patients.map((p) => (
@@ -230,7 +230,7 @@ export default function AdmissionsPage() {
                 <select
                   value={selectedDoctorName}
                   onChange={(e) => setSelectedDoctorName(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   {doctors.map((d) => (
                     <option key={d.id} value={d.name}>
@@ -248,7 +248,7 @@ export default function AdmissionsPage() {
                   value={wardOrRoom}
                   onChange={(e) => setWardOrRoom(e.target.value)}
                   placeholder="e.g. ICU Bed 02, General Ward Bed 08"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
 
@@ -258,7 +258,7 @@ export default function AdmissionsPage() {
                   type="text"
                   value={departmentName}
                   onChange={(e) => setDepartmentName(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function AdmissionsPage() {
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm"
+                className="px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm"
               >
                 Confirm Admission
               </button>

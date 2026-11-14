@@ -52,7 +52,7 @@ export default function NotificationsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">
             WhatsApp Communication Centre & Delivery Logs
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
@@ -89,16 +89,16 @@ export default function NotificationsPage() {
           placeholder="Search by recipient name, phone or message text..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-9 pr-3 py-2 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 text-gray-800 transition"
+          className="w-full pl-9 pr-3 py-2 bg-white border border-orange-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] text-gray-800 transition"
         />
       </div>
 
       {/* Notifications Log Table */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-50 to-white text-[#240b3b] font-bold border-b border-purple-100">
+              <tr className="bg-slate-50 text-[#245BFF] font-bold border-b border-slate-200">
                 <th className="p-3.5 pl-4">Recipient</th>
                 <th className="p-3.5">Template</th>
                 <th className="p-3.5">Message Content</th>
@@ -115,13 +115,13 @@ export default function NotificationsPage() {
                 </tr>
               ) : (
                 filteredNotifications.map((notif) => (
-                  <tr key={notif.id} className="hover:bg-purple-50/20 transition">
+                  <tr key={notif.id} className="hover:bg-orange-50/30 transition">
                     <td className="p-3.5 pl-4 font-bold text-gray-900">
                       <div>{notif.recipient_name}</div>
-                      <div className="text-[11px] font-mono text-purple-700">{notif.phone_number}</div>
+                      <div className="text-[11px] font-mono text-[#245BFF]">{notif.phone_number}</div>
                     </td>
                     <td className="p-3.5">
-                      <span className="font-semibold text-purple-950 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+                      <span className="font-semibold text-[#245BFF] bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
                         {notif.template_type}
                       </span>
                     </td>

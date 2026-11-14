@@ -133,7 +133,7 @@ export default function AppointmentsPage() {
       {/* Header and Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e0833] tracking-tight">Appointment Operations</h1>
+          <h1 className="text-2xl font-bold text-[#245BFF] tracking-tight">Appointment Operations</h1>
           <p className="text-sm text-gray-500 mt-0.5">
             Book, reschedule, check in patients, collect fees, and coordinate doctor consultations.
           </p>
@@ -141,7 +141,7 @@ export default function AppointmentsPage() {
       </div>
 
       {/* Filter Toolbar */}
-      <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-xs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Search Input */}
         <div className="relative">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
@@ -150,7 +150,7 @@ export default function AppointmentsPage() {
             placeholder="Search name, phone, ref..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800 transition"
+            className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800 transition"
           />
         </div>
 
@@ -160,7 +160,7 @@ export default function AppointmentsPage() {
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800 transition"
+            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800 transition"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function AppointmentsPage() {
           <select
             value={selectedDoctor}
             onChange={(e) => setSelectedDoctor(e.target.value)}
-            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800 transition"
+            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800 transition"
           >
             <option value="all">All Doctors</option>
             {doctors.map((d) => (
@@ -185,7 +185,7 @@ export default function AppointmentsPage() {
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-600 focus:bg-white text-gray-800 transition"
+            className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:ring-2 focus:ring-[#245BFF] focus:bg-white text-gray-800 transition"
           >
             <option value="all">All Statuses</option>
             <option value="Confirmed">Confirmed</option>
@@ -200,11 +200,11 @@ export default function AppointmentsPage() {
       </div>
 
       {/* Appointments Data Table */}
-      <div className="bg-white rounded-xl border border-purple-100 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-50 to-white text-[#240b3b] font-bold border-b border-purple-100">
+              <tr className="bg-slate-50 text-[#245BFF] font-bold border-b border-slate-200">
                 <th className="p-3.5 pl-4">Booking Ref</th>
                 <th className="p-3.5">Patient Details</th>
                 <th className="p-3.5">Doctor & Dept</th>
@@ -223,9 +223,9 @@ export default function AppointmentsPage() {
                 </tr>
               ) : (
                 filteredAppointments.map((apt) => (
-                  <tr key={apt.id} className="hover:bg-purple-50/20 transition">
+                  <tr key={apt.id} className="hover:bg-orange-50/30 transition">
                     {/* Booking Ref */}
-                    <td className="p-3.5 pl-4 font-bold text-purple-900">
+                    <td className="p-3.5 pl-4 font-bold text-[#245BFF]">
                       <span className="font-mono">{apt.booking_ref}</span>
                     </td>
 
@@ -235,7 +235,7 @@ export default function AppointmentsPage() {
                       <div className="flex items-center space-x-1.5 text-gray-500 mt-0.5">
                         <a
                           href={`tel:${apt.patient_phone}`}
-                          className="text-purple-700 hover:underline flex items-center space-x-1 font-medium"
+                          className="text-[#245BFF] hover:underline flex items-center space-x-1 font-medium"
                         >
                           <Phone className="w-3 h-3" />
                           <span>{apt.patient_phone}</span>
@@ -260,7 +260,7 @@ export default function AppointmentsPage() {
                       <span
                         className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${
                           apt.appointment_status === 'Checked In'
-                            ? 'bg-purple-100 text-purple-800 border border-purple-200'
+                            ? 'bg-orange-100 text-[#EA580C] border border-orange-200'
                             : apt.appointment_status === 'Confirmed'
                             ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                             : apt.appointment_status === 'In Consultation'
@@ -289,7 +289,7 @@ export default function AppointmentsPage() {
                         ) : (
                           <button
                             onClick={() => updatePaymentStatus(apt.id, 'Paid', 'Cash')}
-                            className="text-[10px] bg-purple-50 text-purple-800 hover:bg-purple-100 px-1.5 py-0.5 rounded font-semibold border border-purple-200 transition"
+                            className="text-[10px] bg-orange-50 text-[#EA580C] hover:bg-orange-100 px-1.5 py-0.5 rounded font-semibold border border-orange-200 transition"
                           >
                             Collect Now
                           </button>
@@ -352,8 +352,8 @@ export default function AppointmentsPage() {
       {/* Reschedule Modal */}
       {reschedulingApt && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-purple-100 space-y-4">
-            <h3 className="text-base font-bold text-[#1e0833]">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 border border-slate-200 space-y-4">
+            <h3 className="text-base font-bold text-[#245BFF]">
               Reschedule Appointment ({reschedulingApt.booking_ref})
             </h3>
             <p className="text-xs text-gray-500">
@@ -366,7 +366,7 @@ export default function AppointmentsPage() {
                 <select
                   value={newDoctorId}
                   onChange={(e) => setNewDoctorId(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   {doctors.map((d) => (
                     <option key={d.id} value={d.id} disabled={!d.is_available_today}>
@@ -382,7 +382,7 @@ export default function AppointmentsPage() {
                   type="date"
                   value={newDate}
                   onChange={(e) => setNewDate(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                 </input>
               </div>
@@ -392,7 +392,7 @@ export default function AppointmentsPage() {
                 <select
                   value={newSlot}
                   onChange={(e) => setNewSlot(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 >
                   {availableSlots.map((slot) => (
                     <option key={slot} value={slot}>
@@ -408,7 +408,7 @@ export default function AppointmentsPage() {
                   type="text"
                   value={rescheduleReason}
                   onChange={(e) => setRescheduleReason(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#245BFF]"
                 />
               </div>
             </div>
@@ -422,7 +422,7 @@ export default function AppointmentsPage() {
               </button>
               <button
                 onClick={handleConfirmReschedule}
-                className="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-xs font-semibold shadow-sm"
+                className="px-4 py-2 bg-[#245BFF] hover:bg-[#1A45C8] text-white rounded-lg text-xs font-semibold shadow-sm"
               >
                 Confirm & Notify Patient
               </button>
